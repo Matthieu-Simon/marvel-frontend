@@ -1,0 +1,10 @@
+.title-homepage {
+    text-align: center;
+    margin: 100px 20px;
+    font-size: 2em;
+    font-weight: bolder;
+    border: 2px solid var(--primary-color);
+    padding: 20px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}

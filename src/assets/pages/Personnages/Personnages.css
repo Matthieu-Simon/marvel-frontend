@@ -1,0 +1,63 @@
+.main-personnage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.title-section {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2em;
+    font-weight: bolder;
+    color: var(--primary-color);
+}
+
+.card-personnage {
+    width: 300px;
+    height: 450px;
+    border: 1px solid red;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.image-personnage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.content-personnage {
+    padding: 10px;
+}
+
+.title-personnage {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.description-personnage {
+    text-align: justify;
+}
+
+.btn-personnage {
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    left: 95px;
+    bottom: 10px;
+}
+
+.pagination {
+    text-align: center;
+    margin-bottom: 50px;
+}

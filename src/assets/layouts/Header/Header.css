@@ -1,0 +1,32 @@
+.logo-container {
+    display: flex;
+    justify-content: center;
+    background-color: var(--black-color);
+    padding: 10px;
+}
+
+.logo-header {
+    width: 100px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.menu a {
+    padding: 5px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.menu a:hover {
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);;
+    color: var(--white-color);
+    border-radius: 5px;
+}
