@@ -4,32 +4,42 @@ import axios from 'axios';
 
 import './Collections.css';
 
-export default function Collection () {
+export default function Collection ({ Hero }) {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
-    const { id } = useParams();
-    console.log(id);
+    const { characterId } = useParams();
+    // console.log(characterId);
     
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/comics/:${id}`);
-                console.log(response.data);
-                // setData(response.data);
-                // setIsLoading(false);
+                const response = await axios.get(`http://localhost:3000/comics/${characterId}`);
+                // console.log(response.data);
+                setData(response.data);
+                setIsLoading(false);
             } catch (error) {
                 console.log(error);
             }
         };
         fetchData();
-    });
+    }, [characterId]);
 
-    return (
+    return isLoading ? <p>Loading</p> : (
         <>
-            <h1 className="title-collection">Collection de comics</h1>
+            <h1 className="title-collection">Collection de comics de {Hero}</h1>
             <main className="content-collection">
-
+            {data.comics.map((comic) => {
+                {console.log(comic)}
+                return (
+                    <div key={comic._id}>
+                        <div>
+                            <h2>{comic.title}</h2>
+                        </div>
+                        <img className="img-collection" src={comic.thumbnail.path + ".jpg"} alt="Photo comics" />
+                    </div>
+                )
+            })}
             </main>
             <p className="pagination">Pagination</p>
         </>
