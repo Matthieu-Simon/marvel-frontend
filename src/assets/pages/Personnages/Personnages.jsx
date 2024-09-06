@@ -15,7 +15,7 @@ export default function Personnages () {
         const fetchData = async () => {
             try {
                 const skip = (currentPage - 1) * itemsPerPage;
-                console.log("skip: ", skip);
+                // console.log("skip: ", skip);
             
                 const response = await axios.get(`http://localhost:3000/characters?limit=${itemsPerPage}&skip=${skip}`)
                 console.log(response.data);
@@ -64,6 +64,7 @@ export default function Personnages () {
                 )
             })}
             </main>
+
             <div className="pagination">
                 <button disabled={currentPage === 1} className="btn-pagination" onClick={handlePreviousPage}>
                     Page précédente

@@ -1,3 +1,35 @@
+.title-collection {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2em;
+    font-weight: bolder;
+    color: var(--primary-color);
+}
+
+.content-collection {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.section-collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 50px 0;
+}
+
+.card-collection {
+    width: 20%;
+}
+
+.title-comic-collection {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
 .img-collection {
-    width: 200px;
+    width: 100%;
+    object-fit: cover;
 }
