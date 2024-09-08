@@ -19,7 +19,9 @@
 .comics-card {
     width: 300px;
     height: 450px;
-    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #0000003b;
     border-radius: 10px;
     margin-bottom: 10px;
     position: relative;
@@ -34,6 +36,7 @@
 
 .comics-content {
     padding: 10px;
+    flex-grow: 1;
 }
 
 .comics-title {
@@ -43,6 +46,12 @@
 
 .comics-description {
     text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 10;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
 }
 
 .pagination {

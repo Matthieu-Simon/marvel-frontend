@@ -21,6 +21,9 @@
 
 .card-collection {
     width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title-comic-collection {
@@ -32,4 +35,14 @@
 .img-collection {
     width: 100%;
     object-fit: cover;
+}
+
+.btn-collection-comic {
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
 }

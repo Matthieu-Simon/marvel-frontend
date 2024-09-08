@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 
 import './Collections.css';
@@ -7,18 +7,25 @@ import './Collections.css';
 export default function Collection () {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-
+    const [characterName, setCharacterName] = useState('');
     const { characterId } = useParams();
     // console.log(characterId);
     
     useEffect(() => {
         const fetchData = async () => {
             try {
+                const characterResponse = await axios.get(`http://localhost:3000/character/${characterId}`);
+                // console.log(characterResponse.data);
                 
-                const response = await axios.get(`http://localhost:3000/comics/${characterId}`);
-                // console.log(response.data);
+                const characterData = characterResponse.data;
+                // console.log(characterData.name);
+                
+                setCharacterName(characterData.name)
 
-                setData(response.data);
+                const comicsResponse = await axios.get(`http://localhost:3000/comics/${characterId}`);
+                console.log(comicsResponse.data);
+
+                setData(comicsResponse.data);
                 setIsLoading(false);
             } catch (error) {
                 console.log(error);
@@ -29,17 +36,20 @@ export default function Collection () {
 
     return isLoading ? <p>Loading</p> : (
         <>
-            <h1 className="title-collection">Collection de </h1>
+            <h1 className="title-collection">Collection de {characterName}</h1>
             <main className="content-collection">
                 <div className="section-collection">
                     {data.comics.map((comic) => {
-                        {console.log(comic)}
+                        {/* {console.log(comic)} */}
                         return (
                             <div className="card-collection" key={comic._id}>
                                 <div>
                                     <h2 className="title-comic-collection">{comic.title}</h2>
                                 </div>
                                 <img className="img-collection" src={comic.thumbnail.path + ".jpg"} alt="Photo comics" />
+                                <Link to={`/comic/${comic._id}`}>
+                                    <button className="btn-collection-comic">Voir Comic</button>
+                                </Link>
                             </div>
                         )
                     })}

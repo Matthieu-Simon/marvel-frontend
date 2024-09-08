@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import './Comics.css';
@@ -56,6 +57,9 @@ export default function Comics () {
                             <h2 className="comics-title">{comic.title}</h2>
                             <p className="comics-description">{comic.description}</p>
                         </div>
+                        <Link to={`/comic/${comic._id}`}>
+                            <button className="btn-personnage">Voir Comic</button>
+                        </Link>
                     </div>
                 )
             })}

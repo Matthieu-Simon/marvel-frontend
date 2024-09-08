@@ -18,7 +18,7 @@ export default function Personnages () {
                 // console.log("skip: ", skip);
             
                 const response = await axios.get(`http://localhost:3000/characters?limit=${itemsPerPage}&skip=${skip}`)
-                console.log(response.data);
+                // console.log(response.data);
                 // console.log(response.data.count);
                 
                 setData(response.data);
@@ -51,17 +51,18 @@ export default function Personnages () {
                 const pathImage = character.thumbnail.path + `/portrait_uncanny.jpg` ;
                 return (
                     <div className="card-personnage" key={character._id}>
-                    {/* {console.log(character._id)} */}
                         <img className="image-personnage" src={pathImage} />
                         <div className="content-personnage">
                             <h2 className="title-personnage">{character.name}</h2>
-                            <p className="description-personnage">{character.description}</p>
+                            <p className="description-personnage">
+                            {character.description}
+                            </p>
                         </div>
                         <Link to={`/comics/${character._id}`}>
                             <button className="btn-personnage">Voir Comics</button>
                         </Link>
                     </div>
-                )
+                    )
             })}
             </main>
 

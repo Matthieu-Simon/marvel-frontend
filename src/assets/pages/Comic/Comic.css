@@ -1,0 +1,26 @@
+.title-comic {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2em;
+    font-weight: bolder;
+    color: var(--primary-color);
+}
+
+.comic-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.image-comic {
+    height: 550px;
+}
+
+.section-description {
+    width: 50%;
+}
+.comic-description {
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
