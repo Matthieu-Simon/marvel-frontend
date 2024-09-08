@@ -18,8 +18,10 @@
 
 .card-personnage {
     width: 300px;
+    display: flex;
+    flex-direction: column;
     height: 450px;
-    border: 1px solid red;
+    border: 1px solid #000;
     border-radius: 10px;
     margin-bottom: 10px;
     position: relative;
@@ -34,6 +36,7 @@
 
 .content-personnage {
     padding: 10px;
+    flex-grow: 1;
 }
 
 .title-personnage {
@@ -43,6 +46,12 @@
 
 .description-personnage {
     text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 10;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
 }
 
 .btn-personnage {
@@ -55,6 +64,16 @@
     position: absolute;
     left: 95px;
     bottom: 10px;
+}
+
+.btn-pagination {
+    margin: 8px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+    cursor: pointer;
 }
 
 .pagination {
