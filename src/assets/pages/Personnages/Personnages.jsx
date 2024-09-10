@@ -20,8 +20,8 @@ export default function Personnages () {
             try {
                 const skip = (currentPage - 1) * itemsPerPage;
                 // console.log("skip: ", skip);
-            
-                const response = await axios.get(`http://localhost:3000/characters?limit=${itemsPerPage}&skip=${skip}`)
+                
+                const response = await axios.get(`https://site--marvel-backend--wmhs7j45p7n2.code.run/characters?limit=${itemsPerPage}&skip=${skip}`)
                 // console.log(response.data);
                 // console.log(response.data.count);
                 
@@ -40,7 +40,7 @@ export default function Personnages () {
         if (search) {
             const searchCharacters = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:3000/characters?name=${search}`);
+                    const response = await axios.get(`https://site--marvel-backend--wmhs7j45p7n2.code.run/characters?name=${search}`);
                     // console.log(response.data);
                     
                     setFilteredData(response.data.results);

@@ -18,7 +18,7 @@ export default function Comics () {
                 const skip = (currentPage - 1) * itemsPerPage;
                 // console.log("skip: ", skip);
 
-                const response = await axios.get(`http://localhost:3000/comics?limit=${itemsPerPage}&skip=${skip}`);
+                const response = await axios.get(`https://site--marvel-backend--wmhs7j45p7n2.code.run/comics?limit=${itemsPerPage}&skip=${skip}`);
                 console.log(response.data);
                 const sortedData = response.data.results.sort((a, b) => {
                     a.title.localeCompare(b.title)

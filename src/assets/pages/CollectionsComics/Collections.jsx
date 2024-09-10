@@ -14,7 +14,7 @@ export default function Collection () {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const characterResponse = await axios.get(`http://localhost:3000/character/${characterId}`);
+                const characterResponse = await axios.get(`https://site--marvel-backend--wmhs7j45p7n2.code.run/character/${characterId}`);
                 // console.log(characterResponse.data);
                 
                 const characterData = characterResponse.data;
@@ -22,7 +22,7 @@ export default function Collection () {
                 
                 setCharacterName(characterData.name)
 
-                const comicsResponse = await axios.get(`http://localhost:3000/comics/${characterId}`);
+                const comicsResponse = await axios.get(`https://site--marvel-backend--wmhs7j45p7n2.code.run/comics/${characterId}`);
                 console.log(comicsResponse.data);
 
                 setData(comicsResponse.data);
