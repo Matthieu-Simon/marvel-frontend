@@ -2,8 +2,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import './Home.css';
 import Image from '../../img/Banner.jpg';
-import Image1 from '../../img/Banner3.jpeg';
-import Image2 from '../../img/Banner2.jpeg';
+import Image1 from '../../img/Banner2.jpeg';
+import Image2 from '../../img/Banner3.jpeg';
 import Image3 from '../../img/IronMan.png';
 
 export default function Home () {
