@@ -22,7 +22,7 @@ export default function Personnages () {
                 // console.log("skip: ", skip);
                 
                 const response = await axios.get(`https://site--marvel-backend--wmhs7j45p7n2.code.run/characters?limit=${itemsPerPage}&skip=${skip}`)
-                // console.log(response.data);
+                console.log(response.data);
                 // console.log(response.data.count);
                 
                 setData(response.data);
