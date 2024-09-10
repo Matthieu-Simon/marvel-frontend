@@ -1,7 +1,7 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import './Home.css';
-import Image from '../../img/Banner.jpg';
+// import Image from '../../img/Banner.jpg';
 import Image1 from '../../img/Banner2.jpeg';
 import Image2 from '../../img/Banner3.jpeg';
 import Image3 from '../../img/IronMan.png';
@@ -13,9 +13,9 @@ export default function Home () {
                 <Carousel
                     infiniteLoop
                 >
-                    <div>
+                    {/* <div>
                         <img src={Image} alt="Banner 1" />
-                    </div>
+                    </div> */}
                     <div>
                         <img src={Image1} alt="Banner 2" />
                     </div>
